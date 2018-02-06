@@ -1,0 +1,10 @@
+D:\_core\Helper\Helper.API\bin\Debug\netcoreapp2.0\Helper.API.deps.json
+D:\_core\Helper\Helper.API\bin\Debug\netcoreapp2.0\Helper.API.runtimeconfig.json
+D:\_core\Helper\Helper.API\bin\Debug\netcoreapp2.0\Helper.API.runtimeconfig.dev.json
+D:\_core\Helper\Helper.API\bin\Debug\netcoreapp2.0\Helper.API.dll
+D:\_core\Helper\Helper.API\bin\Debug\netcoreapp2.0\Helper.API.pdb
+D:\_core\Helper\Helper.API\obj\Debug\netcoreapp2.0\Helper.API.csproj.CoreCompileInputs.cache
+D:\_core\Helper\Helper.API\obj\Debug\netcoreapp2.0\Helper.API.AssemblyInfoInputs.cache
+D:\_core\Helper\Helper.API\obj\Debug\netcoreapp2.0\Helper.API.AssemblyInfo.cs
+D:\_core\Helper\Helper.API\obj\Debug\netcoreapp2.0\Helper.API.dll
+D:\_core\Helper\Helper.API\obj\Debug\netcoreapp2.0\Helper.API.pdb
