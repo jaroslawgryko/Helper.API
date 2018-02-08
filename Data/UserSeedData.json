@@ -1,0 +1,92 @@
+[
+    {
+        "username": "adam",
+        "password": "password",
+        "email": "adam@gmail.pl",
+        "telefon": "784 548 547",
+        "instytucjaNazwa": "Narodowe Centrum Nauki",
+        "instytucjaSymbol": "NCN",
+        "instytucjaRodzaj": "pozostałe instytucje"
+    },
+    {
+        "username": "barbara",
+        "password": "password",
+        "email": "barbara@gmail.pl",
+        "telefon": "145 784 648",
+        "instytucjaNazwa": "Ministerstwo Finansów",
+        "instytucjaSymbol": "MF",
+        "instytucjaRodzaj": "ministerstwo"
+    },
+    {
+        "username": "celina",
+        "password": "password",
+        "email": "celina@gmail.pl",
+        "telefon": "147 568 148",
+        "instytucjaNazwa": "Ministerstwo Sprawiedliwości",
+        "instytucjaSymbol": "MS",
+        "instytucjaRodzaj": "ministerstwo"
+    },
+    {
+        "username": "darek",
+        "password": "password",
+        "email": "darek@gmail.pl",
+        "telefon": "145 671 548",
+        "instytucjaNazwa": "Krajowy Zarząd Gospodarki Wodnej",
+        "instytucjaSymbol": "KZGW",
+        "instytucjaRodzaj": "urzęd centralny"
+    },
+    {
+        "username": "edmund",
+        "password": "password",
+        "email": "edmund@gmail.pl",
+        "telefon": "569 478 256",
+        "instytucjaNazwa": "Ministerstwo Rozwoju",
+        "instytucjaSymbol": "MR",
+        "instytucjaRodzaj": "ministerstwo"
+    },
+    {
+        "username": "franek",
+        "password": "password",
+        "email": "franek@gmail.pl",
+        "telefon": "784 548 547",
+        "instytucjaNazwa": "Główny Urząd Miar",
+        "instytucjaSymbol": "GUM",
+        "instytucjaRodzaj": "pozostałe instytucje"
+    },
+    {
+        "username": "grzegorz",
+        "password": "password",
+        "email": "grzegorz@gmail.pl",
+        "telefon": "145 784 648",
+        "instytucjaNazwa": "Łódzki Urząd Wojewódzki w Łodzi",
+        "instytucjaSymbol": "LUW",
+        "instytucjaRodzaj": "urząd wojewódzki"
+    },
+    {
+        "username": "halina",
+        "password": "password",
+        "email": "halina@gmail.pl",
+        "telefon": "147 568 148",
+        "instytucjaNazwa": "Ministerstwo Zdrowia",
+        "instytucjaSymbol": "MZ",
+        "instytucjaRodzaj": "ministerstwo"
+    },
+    {
+        "username": "ireneusz",
+        "password": "password",
+        "email": "ireneusz@gmail.pl",
+        "telefon": "145 671 548",
+        "instytucjaNazwa": "Lubelski Urząd Wojewódzki w Lublinie",
+        "instytucjaSymbol": "LUW",
+        "instytucjaRodzaj": "urząd wojewódzki"
+    },
+    {
+        "username": "jarek",
+        "password": "password",
+        "email": "jarek@gmail.pl",
+        "telefon": "569 478 256",
+        "instytucjaNazwa": "Małopolski Urząd Wojewódzki w Krakowie",
+        "instytucjaSymbol": "MUW",
+        "instytucjaRodzaj": "urząd wojewódzki"
+    }    
+]
