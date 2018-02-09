@@ -10,6 +10,9 @@ namespace Helper.API.Data
         public AutoMapperProfiles()
         {
             CreateMap<User, UserForListDto>();
+
+            CreateMap<Jednostka, JednostkaForDetailedDto>();
+            CreateMap<User, UserForDetailedDto>();
         }        
     }
 }
