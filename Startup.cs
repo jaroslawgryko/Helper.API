@@ -3,6 +3,7 @@ using System.Text;
 
 using Helper.API.Data;
 using Helper.API.Helpers;
+using AutoMapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
@@ -31,6 +32,8 @@ namespace Helper.API
 
             services.AddDbContext<DataContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:Default"]));
             services.AddTransient<Seed>();
+            services.AddAutoMapper();
+
             services.AddScoped<IAuthRepository, AuthRepository>();
             services.AddScoped<IHelperRepository, HelperRepository>();
 
