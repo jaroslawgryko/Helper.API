@@ -36,13 +36,29 @@ namespace Helper.API.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-
-            var useToCreate = new User
-            {
-                Username = userForRegisterDto.Username
+            var jednostkaToCreate = new Jednostka {
+                Nazwa = userForRegisterDto.InstytucjaNazwa,
+                Symbol = userForRegisterDto.InstytucjaSymbol,
+                Opis = "",
+                DataModyfikacji = DateTime.Now,
+                IsMain = true
             };
 
-            var userToCreate = await _repo.Register(useToCreate, userForRegisterDto.Password);
+            var userToCreate = new User
+            {
+                Username = userForRegisterDto.Username,
+                Email = userForRegisterDto.Email,
+                Telefon = userForRegisterDto.Telefon,
+                Utworzony = userForRegisterDto.Utworzony,
+                OstatniaAktywnosc = userForRegisterDto.OstatniaAktywnosc,
+                InstytucjaNazwa = userForRegisterDto.InstytucjaNazwa,
+                InstytucjaSymbol = userForRegisterDto.InstytucjaSymbol,
+                InstytucjaRodzaj = userForRegisterDto.InstytucjaRodzaj                
+            };
+
+            userToCreate.Jednostki.Add(jednostkaToCreate);
+
+            var userCreated = await _repo.Register(userToCreate, userForRegisterDto.Password);
 
             return StatusCode(201);
         }
