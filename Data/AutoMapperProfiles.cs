@@ -13,6 +13,8 @@ namespace Helper.API.Data
 
             CreateMap<Jednostka, JednostkaForDetailedDto>();
             CreateMap<User, UserForDetailedDto>();
+
+            CreateMap<UserForUpdateDto, User>();
         }        
     }
 }
