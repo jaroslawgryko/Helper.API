@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Helper.API.Helpers;
 using Helper.API.Models;
 
 namespace Helper.API.Data
@@ -10,7 +11,7 @@ namespace Helper.API.Data
         void Delete<T>(T entity) where T : class;
         Task<bool> SaveAll();
 
-        Task<IEnumerable<User>> GetUsers();
+        Task<PagedList<User>> GetUsers(UserParams userParams);
         Task<User> GetUser(int id);         
     }
 }
