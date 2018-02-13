@@ -5,12 +5,14 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Helper.API.Data;
 using Helper.API.Dtos;
+using Helper.API.Helpers;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 
 namespace AdmHelper.API.Controllers
 {
+    [ServiceFilter(typeof(LogUserActivity))]
     [Authorize]
     [Route("api/[controller]")]
     public class UsersController : Controller
