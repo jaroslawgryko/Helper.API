@@ -32,10 +32,24 @@ namespace Helper.API.Data
 
         public async Task<PagedList<User>> GetUsers(UserParams userParams)
         {
-            var users = _context.Users.AsQueryable();
-            if (!string.IsNullOrEmpty(userParams.InstytucjaRodzaj) && userParams.InstytucjaRodzaj != "all" )
+            var users = _context.Users.OrderByDescending(u => u.OstatniaAktywnosc).AsQueryable();
+
+            if (!string.IsNullOrEmpty(userParams.InstytucjaRodzaj) && userParams.InstytucjaRodzaj != "all" && userParams.InstytucjaRodzaj != "undefined" )
             {
                 users = users.Where(u => u.InstytucjaRodzaj == userParams.InstytucjaRodzaj);
+            }
+
+            if (!string.IsNullOrEmpty(userParams.OrderBy))
+            {
+                switch (userParams.OrderBy)
+                {
+                    case "utworzony":
+                        users = users.OrderByDescending(u => u.Utworzony);
+                        break;
+                    default:
+                        users = users.OrderByDescending(u => u.OstatniaAktywnosc);
+                        break;
+                }
             }
 
             return await PagedList<User>.CreateAsync(users, userParams.PageNumber, userParams.PageSize);

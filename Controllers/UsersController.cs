@@ -29,6 +29,11 @@ namespace AdmHelper.API.Controllers
         [HttpGet]
         public async Task<IActionResult> GetUsers([FromQuery]UserParams userParams)
         {
+            if (string.IsNullOrEmpty(userParams.InstytucjaRodzaj) )
+            {
+                userParams.InstytucjaRodzaj = "all";
+            }
+
             var users = await _repo.GetUsers(userParams);
             var usersToReturn = _mapper.Map<IEnumerable<UserForListDto>>(users);
 

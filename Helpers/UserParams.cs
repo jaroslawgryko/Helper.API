@@ -15,5 +15,8 @@ namespace Helper.API.Helpers
 
         // filtrowanie
         public string InstytucjaRodzaj { get; set; }
+
+        // sortowanie
+        public string OrderBy { get; set; }
     }
 }
