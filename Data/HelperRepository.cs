@@ -61,5 +61,22 @@ namespace Helper.API.Data
             
             return user;
         }          
+
+        public async Task<Jednostka> GetJednostka(int id)
+        {
+            return await _context.Jednostki.FirstOrDefaultAsync(j => j.Id == id);
+        }
+
+        public async Task<Jednostka> GetJednostkaUser(int userId, int id)
+        {
+            return await _context.Jednostki.FirstOrDefaultAsync(j => j.Id == id && j.UserId == userId);
+        }
+
+        public async Task<IEnumerable<Jednostka>> GetJednostkiUser(int userId)
+        {
+            var jednostki = await _context.Jednostki.Where(j => j.UserId == userId).ToListAsync();
+
+            return jednostki;
+        }
     }
 }

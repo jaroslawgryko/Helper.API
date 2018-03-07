@@ -61,6 +61,8 @@ namespace AdmHelper.API.Controllers
             var currentUserId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
 
             var userFromRepo = await _repo.GetUser(id);
+            
+            // TODO update jednostki main w jednostkach
 
             if (userFromRepo == null)
                 return NotFound($"Nie znaleziono użytkownika o id {id}");

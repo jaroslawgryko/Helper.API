@@ -15,6 +15,19 @@ namespace Helper.API.Data
             CreateMap<User, UserForDetailedDto>();
 
             CreateMap<UserForUpdateDto, User>();
+
+
+            CreateMap<JednostkaForRegisterDto, Jednostka>();
+                
+            CreateMap<Jednostka, JednostkaForListDto>()
+                .ForMember(desc => desc.Parent, opt => {
+                    opt.MapFrom(src => src.Parent);
+                });
+
+            CreateMap<Jednostka, JednostkaForTreeDto>()
+                .ForMember(desc => desc.Parent, opt => {
+                    opt.MapFrom(src => src.Parent);
+                });            
         }        
     }
 }

@@ -13,5 +13,10 @@ namespace Helper.API.Data
 
         Task<PagedList<User>> GetUsers(UserParams userParams);
         Task<User> GetUser(int id);         
+
+        // jednostki
+        Task<Jednostka> GetJednostka(int id);
+        Task<Jednostka> GetJednostkaUser(int userId, int id);
+        Task<IEnumerable<Jednostka>> GetJednostkiUser(int userId);
     }
 }
