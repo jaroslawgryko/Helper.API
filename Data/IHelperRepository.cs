@@ -18,5 +18,6 @@ namespace Helper.API.Data
         Task<Jednostka> GetJednostka(int id);
         Task<Jednostka> GetJednostkaUser(int userId, int id);
         Task<IEnumerable<Jednostka>> GetJednostkiUser(int userId);
+        Task<Jednostka> GetJednostkaUserBySymbol(int userId, string symbol);
     }
 }

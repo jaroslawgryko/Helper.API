@@ -78,5 +78,11 @@ namespace Helper.API.Data
 
             return jednostki;
         }
+
+        public async Task<Jednostka> GetJednostkaUserBySymbol(int userId, string symbol)
+        {
+            var jednostka = await _context.Jednostki.Where(j => j.UserId == userId && j.Symbol == symbol).FirstOrDefaultAsync();
+            return jednostka;
+        }
     }
 }

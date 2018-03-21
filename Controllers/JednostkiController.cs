@@ -71,7 +71,7 @@ namespace Helper.API.Controllers
         }
 
 
-        [HttpGet]
+        [HttpGet(Name="JednostkiUserLista")]
         public async Task<IActionResult> GetJednostkiUser(int userId)
         {
             if (userId != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
@@ -85,6 +85,48 @@ namespace Helper.API.Controllers
 
             return Ok(jednostkiForReturn);
 
+        }
+
+        [HttpPost("import")]
+        public async Task<IActionResult> ImportujJednostki(int userId, [FromBody]IEnumerable<JednostkaForImportDto> jednostkiDto)
+        {            
+            if (userId != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
+                return Unauthorized();
+            
+            var noErrs = true;
+
+            foreach(JednostkaForImportDto jD in jednostkiDto)
+            {
+                var jednostkaNadrzednaFromRepo = await _repo.GetJednostkaUserBySymbol(userId, jD.Nadrzedny);
+                if (jednostkaNadrzednaFromRepo == null)
+                    return BadRequest("Nie znaleziono jednostki nadrzędnej");
+
+                var jednostka = new Jednostka();
+                jednostka.Nazwa = jD.Nazwa;
+                jednostka.Symbol = jD.Symbol;
+                jednostka.Opis = jD.Opis;
+                jednostka.DataModyfikacji = DateTime.Now;
+                jednostka.Parent = jednostkaNadrzednaFromRepo;
+                jednostka.UserId = userId;
+                jednostka.IsMain = false;
+
+                _repo.Add(jednostka);       
+
+                if(!await _repo.SaveAll())
+                {
+                    noErrs = false;
+                }
+            }
+
+            if(noErrs) 
+            {
+                return CreatedAtRoute("JednostkiUserLista", new { id = userId }, new { } );
+                //return NoContent();
+            } else 
+            {
+                throw new System.Exception("Dodanie jednostek nie powiodło się");
+            }
+                       
         }
     }
 }
